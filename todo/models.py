@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 # Each model is represented by a class
+# Item inherits the properties and methods from the models.Model class
 class Item(models.Model):
     # Each database field is represented by a class variable
     name = models.CharField(max_length=30, blank=False)

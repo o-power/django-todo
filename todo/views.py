@@ -28,6 +28,9 @@ def create_an_item(request):
     return render(request, "item_form.html", {'form': form})
 
 def edit_an_item(request, id):
+    # Lookup by a primary key is the most common case, so Django provides a
+    # shortcut for primary-key exact lookups.
+    # Question.objects.get(pk=1) is identical to Question.objects.get(id=1).
     item = get_object_or_404(Item, pk=id)
     
     if request.method == 'POST':
@@ -38,7 +41,10 @@ def edit_an_item(request, id):
     else:
         form = ItemForm(instance=item)
 
-    return render(request, "item_form.html", {'form': form})
+    # Load the template called item_form.html and passes it a context.
+    # The context is a dictionary mapping template variable names to Python objects.
+    context = {'form': form}
+    return render(request, "item_form.html", context)
 
 def toggle_status(request, id):
     item = get_object_or_404(Item, pk=id)
