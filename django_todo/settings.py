@@ -26,7 +26,7 @@ SECRET_KEY = 'zd9+uigg^7k+i+qy_dizq_t%4nu7j*a$*t(^44pzem9zbb9oi5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ollies-django-todo.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HOSTNAME')]
 
 
 # Application definition
