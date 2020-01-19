@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('HOSTNAME')]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,7 +83,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse("postgres://vewsnpdohoeawy:9c134638ae869e7e28980bae7cc9c08437d9cc48fb5d49d4aa16363c77453fde@ec2-46-137-187-23.eu-west-1.compute.amazonaws.com:5432/d5ikiu65h8rfdc")
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
